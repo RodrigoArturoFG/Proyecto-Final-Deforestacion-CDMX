@@ -1,0 +1,47 @@
+# ─── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# ─── IDEs ─────────────────────────────────────────────────────
+.vscode/
+.idea/
+.history/
+*.log
+
+# ─── Credenciales Google (nunca subir al repo) ────────────────
+credentials.json
+token.json
+
+# ─── Imágenes satelitales — demasiado pesadas para Git (~1 GB) ─
+data/raw/*.tif
+data/raw/*.tiff
+
+# ─── Dataset de entrenamiento kNN ─────────────────────────────
+# Generado localmente con 03_generar_dataset.py — no se versiona
+forest/
+deforestation/
+
+# ─── Outputs generados ────────────────────────────────────────
+# Imágenes y reportes producidos por 02_pipeline.py
+data/outputs/*.ppm
+data/outputs/*.png
+data/outputs/*.csv
+
+# ─── Shapefile INEGI ──────────────────────────────────────────
+# Descarga manual — no redistribuible directamente
+data/raw/*.shp
+data/raw/*.dbf
+data/raw/*.shx
+data/raw/*.prj
+data/raw/*.cpg
+
+# ─── Contexto de sesión (Claude Code) ─────────────────────────
+contexto_proyecto_final_AI.md
+
+# ─── Sistema Operativo ────────────────────────────────────────
+.DS_Store
+Thumbs.db
