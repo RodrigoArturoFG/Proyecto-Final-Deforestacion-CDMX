@@ -21,7 +21,7 @@ data/raw/*.tif
 data/raw/*.tiff
 
 # ─── Dataset de entrenamiento kNN ─────────────────────────────
-# Generado localmente con scripts/03_generar_dataset.py — no se versiona
+# Generado localmente con scripts/03_generar_dataset.py — no se versiona por el momento
 forest/
 deforestation/
 
