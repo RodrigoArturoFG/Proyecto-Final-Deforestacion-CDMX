@@ -1,0 +1,28 @@
+# Proyecto-Final-Deforestacion-CDMX
+# Instalar con: pip install -r requirements.txt
+
+# Lectura y escritura de GeoTIFFs
+rasterio==1.3.10
+
+# Operaciones matriciales (arrays en memoria)
+numpy==1.26.4
+
+# Operaciones vectoriales GIS (shapefile alcaldías INEGI)
+geopandas==0.14.4
+
+# Morfología matemática y componentes conectados
+scikit-image==0.22.0
+
+# Operaciones de imagen adicionales
+opencv-python==4.9.0.80
+
+# Visualización y generación de mapas PNG
+matplotlib==3.8.4
+
+# Descarga desde Google Drive
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-api-python-client==2.126.0
+
+# Barra de progreso para descarga
+tqdm==4.66.2

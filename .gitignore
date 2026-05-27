@@ -21,12 +21,12 @@ data/raw/*.tif
 data/raw/*.tiff
 
 # ─── Dataset de entrenamiento kNN ─────────────────────────────
-# Generado localmente con 03_generar_dataset.py — no se versiona
+# Generado localmente con scripts/03_generar_dataset.py — no se versiona
 forest/
 deforestation/
 
 # ─── Outputs generados ────────────────────────────────────────
-# Imágenes y reportes producidos por 02_pipeline.py
+# Imágenes y reportes producidos por scripts/02_pipeline.py
 data/outputs/*.ppm
 data/outputs/*.png
 data/outputs/*.csv

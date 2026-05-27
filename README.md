@@ -78,12 +78,12 @@ data/raw/alcaldias_cdmx.shx
 
 ### Paso 1 — Exportar imágenes desde Google Earth Engine
 
-Abrir [code.earthengine.google.com](https://code.earthengine.google.com), pegar el contenido de `00_gee_export.js` y ejecutarlo. En la pestaña **Tasks**, correr las 3 exportaciones. Los archivos llegarán a Google Drive en la carpeta `deforestacion_cdmx/` en 5–20 minutos.
+Abrir [code.earthengine.google.com](https://code.earthengine.google.com), pegar el contenido de `scripts/00_gee_export.js` y ejecutarlo. En la pestaña **Tasks**, correr las 3 exportaciones. Los archivos llegarán a Google Drive en la carpeta `deforestacion_cdmx/` en 5–20 minutos.
 
 ### Paso 2 — Descargar imágenes al disco local
 
 ```bash
-python 01_descarga_drive.py
+python scripts/01_descarga_drive.py
 ```
 
 Se abrirá el navegador para autenticación la primera vez. Descarga ~1 GB a `data/raw/`.
@@ -91,7 +91,7 @@ Se abrirá el navegador para autenticación la primera vez. Descarga ~1 GB a `da
 ### Paso 3 — Generar dataset de entrenamiento
 
 ```bash
-python 03_generar_dataset.py
+python scripts/03_generar_dataset.py
 ```
 
 Extrae 600 parches de 16×16 píxeles etiquetados desde WorldCover. Solo se ejecuta una vez.
@@ -99,7 +99,7 @@ Extrae 600 parches de 16×16 píxeles etiquetados desde WorldCover. Solo se ejec
 ### Paso 4 — Ejecutar el análisis
 
 ```bash
-python 02_pipeline.py
+python scripts/02_pipeline.py
 ```
 
 Procesa todo en memoria RAM y escribe los resultados en `data/outputs/`.
@@ -108,7 +108,7 @@ Procesa todo en memoria RAM y escribe los resultados en `data/outputs/`.
 
 ## Parámetros ajustables
 
-En `02_pipeline.py`:
+En `scripts/02_pipeline.py`:
 
 | Parámetro | Default | Descripción |
 |---|---|---|
@@ -145,20 +145,24 @@ En `02_pipeline.py`:
 
 ```
 Proyecto-Final-Deforestacion-CDMX/
-├── 00_gee_export.js
-├── 01_descarga_drive.py
-├── 02_pipeline.py
-├── 03_generar_dataset.py
+├── scripts/
+│   ├── config.py                  # Rutas absolutas y parámetros centralizados
+│   ├── 00_gee_export.js
+│   └── 01_descarga_drive.py
+│   └── 02_pipeline.py
+│   └── 03_generar_dataset.py
 ├── requirements.txt
-├── credentials.json          # No incluido en el repo (agregar a .gitignore)
+├── credentials.json           # No incluido en el repo (agregar a .gitignore)
+├── contexto_SIODS.md          # Referencia completa de indicadores SIODS y Agenda 2030
+├── how_to_clone_vs_code.md    # Guía de clonado y configuración para VS Code
 ├── data/
-│   ├── raw/                  # GeoTIFFs + shapefile INEGI
-│   └── outputs/              # Resultados generados
-├── forest/                   # Dataset entrenamiento — bosque
-└── deforestation/            # Dataset entrenamiento — no bosque
+│   ├── raw/                   # GeoTIFFs + shapefile INEGI
+│   └── outputs/               # Resultados generados
+├── forest/                    # Dataset entrenamiento — bosque
+└── deforestation/             # Dataset entrenamiento — no bosque
 ```
 
-> Agregar a `.gitignore`: `credentials.json`, `token.json`, `data/raw/*.tif`, `forest/`, `deforestation/`
+> Agregar a `.gitignore`: `credentials.json`, `token.json`, `data/raw/*.tif`, `forest/`, `deforestation/`, `contexto_proyecto_final_AI.md`
 
 ---
 
